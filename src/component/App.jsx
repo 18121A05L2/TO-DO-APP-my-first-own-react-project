@@ -8,15 +8,21 @@ export default function App(){
   function buildingArray(value){
     setArr((prev) => {
       return [ ...prev,value]
-    })
-    console.log(arr)
-  }
+    })}
 
+  function deleteSelected(id){
+    console.log(id)
+    setArr(prev => {
+      return prev.filter((val,index) => {
+        return index!==id
+      })
+    })
+  }
   return (
     <div className="app">
     <Heading/>
     <Input buildingArray={buildingArray} />
-    <Display arr={arr} />
+    <Display arr={arr} deleteSelected={deleteSelected} />
     </div>
   );
 }

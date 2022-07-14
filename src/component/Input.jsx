@@ -4,7 +4,6 @@ export default function Input(props){
   const [inputText,setInputText] = React.useState("");
   function handleChange(event){
     setInputText(event.target.value);
-    console.log(inputText);
   }
   function handleSubmit(event){
     event.preventDefault();

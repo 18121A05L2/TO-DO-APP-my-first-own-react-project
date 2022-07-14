@@ -23,7 +23,7 @@ h1 {
   min-width:30rem;
   right:25%;
   left:25%;
-  top:4rem;
+  top:3rem;
 }
 
 
@@ -81,6 +81,7 @@ footer :last-child {
   margin-left: auto;
   color:#F37878;
 }
+
 
 
 /* add input  */
