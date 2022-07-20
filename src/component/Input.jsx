@@ -1,6 +1,7 @@
 import React from "react";
 import {useRef, useEffect} from 'react';
 import images from "./images/index"
+import { useMediaPredicate } from "react-media-hook";
 
 export default function Input(props){
   const [inputText,setInputText] = React.useState("");
@@ -17,6 +18,8 @@ export default function Input(props){
 
 
   let [mode,setMode] = React.useState(true)
+  const lessThan700 = useMediaPredicate("(max-width:700px)")
+  const moreThan700 = useMediaPredicate("(min-width:700px)")
   function handleMode(){
      if(mode){
       document.getElementsByTagName("img")[0].src = images.moon;
@@ -30,6 +33,8 @@ export default function Input(props){
       props.displayRef.current.style.boxShadow = " 0rem 0rem 1rem 0rem "
       document.getElementsByTagName('footer')[0].style.boxShadow="0rem 0rem 1rem 0rem";
       document.body.style.backgroundImage = 'url("./images/bg-desktop-light.jpg")';
+      lessThan700 && ( document.body.style.backgroundImage = "url('./images/bg-mobile-light.jpg')" )
+      moreThan700 && ( document.body.style.backgroundImage = "url('./images/bg-desktop-light.jpg')" )
 
     }else{
       document.getElementsByTagName("img")[0].src = images.brightness;
@@ -42,6 +47,8 @@ export default function Input(props){
       props.displayRef.current.style.boxShadow = ""
       document.getElementsByTagName('footer')[0].style.boxShadow="";
       document.body.style.backgroundImage = 'url("./images/bg-desktop-dark.jpg")';
+      lessThan700 && ( document.body.style.backgroundImage = "url('./images/bg-mobile-dark.jpg')" )
+      moreThan700 && ( document.body.style.backgroundImage = "url('./images/bg-desktop-dark.jpg')" )
     }
     setMode(!mode)
   }

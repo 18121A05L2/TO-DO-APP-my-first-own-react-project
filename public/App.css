@@ -121,12 +121,20 @@ footer :last-child {
   .app{
     position: relative;
     max-width: 86%;
-    min-width:30rem;
+    min-width:25rem;
     right:7%;
     left:7%;
     top:1.5rem;
   }
+  body{
+    background-image: url("./images/bg-mobile-dark.jpg")
+  }
 
+}
+@media (min-width : 700px ){
+  /* body{
+    background-image: url("./images/bg-mobile-dark.jpg")
+  } */
 }
 
 

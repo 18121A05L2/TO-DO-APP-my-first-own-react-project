@@ -2,7 +2,6 @@ import React from "react";
 
 export default function AddInput(props){
   function handleChange(event){
-    console.log(event.target.checked)
     props.handleState(props.id)
   }
   function handleClick(){

@@ -46,16 +46,32 @@ export default function App(){
 
   let [completed,setCompleted] = React.useState()
   function handleCompleted(){
-    
+    setCompleted(() => {
+      return arr.filter(val => {
+        return val.state===true
+      })
+    })
   }
+  console.log(completed)
   return (
     <div className="app">
     <Input buildingArray={buildingArray} displayRef={displayRef} />
     <div className="display" ref={displayRef} id="hello">
       {arr.length==0 && <h5>You don't have any tasks</h5> }
-      {arr.map((val,index) => {
+
+
+
+
+
+
+
+
+
+
+      { arr.map((val) => {
         return  <AddInput key={uuidv4()} id={val.id} val={val.value} deleteSelected={deleteSelected} handleState={handleState} state={val.state}/>
-      })}
+      }) }
+
     </div>
     <Footer deleteAll={deleteAll} handleCompleted={handleCompleted}/>
     </div>
