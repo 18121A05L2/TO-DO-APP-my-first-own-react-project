@@ -1,4 +1,6 @@
 import React from "react";
+import {useRef, useEffect} from 'react';
+import images from "./images/index"
 
 export default function Input(props){
   const [inputText,setInputText] = React.useState("");
@@ -8,9 +10,49 @@ export default function Input(props){
   function handleSubmit(event){
     event.preventDefault();
     setInputText("")
-    props.buildingArray(inputText)
+    if (inputText!==""){
+      props.buildingArray(inputText)
+    }
   }
+
+  let [mode,setMode] = React.useState(true)
+  useEffect( () => {
+    let displayinput=document.querySelector("displayinput");
+  })
+
+  function handleMode(){
+     if(mode){
+      document.getElementsByTagName("img")[0].src = images.moon;
+      document.body.style.backgroundColor = "white";
+      document.getElementsByTagName('input')[0].style.backgroundColor="white";
+      document.getElementsByTagName('input')[0].style.color = "hsl(235, 24%, 19%)";
+      document.getElementsByTagName('footer')[0].style.backgroundColor="white";
+      document.getElementsByTagName('footer')[0].style.color="hsl(234, 11%, 52%)";
+      props.displayRef.current.style.backgroundColor="white";
+      props.displayRef.current.style.color="hsl(235, 24%, 19%)";
+      props.displayRef.current.style.boxShadow = " 0rem 0rem 1rem 0rem "
+      document.getElementsByTagName('footer')[0].style.boxShadow="0rem 0rem 1rem 0rem";
+
+    }else{
+      document.getElementsByTagName("img")[0].src = images.brightness;
+      document.body.style.backgroundColor = "hsl(235, 21%, 11%)";
+      document.getElementsByTagName('input')[0].style.backgroundColor="hsl(235, 24%, 19%)";
+      document.getElementsByTagName('input')[0].style.color = "white";
+      document.getElementsByTagName('footer')[0].style.backgroundColor="hsl(235, 24%, 19%)";
+      props.displayRef.current.style.backgroundColor="hsl(235, 24%, 19%)"
+      props.displayRef.current.style.color="white";
+      props.displayRef.current.style.boxShadow = ""
+      document.getElementsByTagName('footer')[0].style.boxShadow="";
+    }
+    setMode(!mode)
+  }
+
   return (<div>
+    <header>
+      <h1>T O D O </h1>
+      <img className="brightness" src={images.brightness} onClick={handleMode}alt="light mode"/>
+    </header>
+
     <form method="get" onSubmit={handleSubmit} >
     <input onChange={handleChange} type="text" placeholder="Create a new todo" value={inputText} />
     </form>

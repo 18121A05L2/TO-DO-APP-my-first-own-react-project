@@ -11,6 +11,7 @@ body{
   background-repeat: no-repeat;
   background-size: 100% 35%;
   color:hsl(236, 33%, 92%);
+  font-family: "Josefin Sans"
 }
 h1 {
   display: inline-block;
@@ -25,12 +26,7 @@ h1 {
   left:25%;
   top:3rem;
 }
-
-
-
-/* heading css  */
 header{
-  /* margin-bottom: 1rem; */
   padding: 1rem;
 }
 .brightness{
@@ -43,7 +39,7 @@ header{
   top:1.7rem;
 }
 
-/* input css */
+/*--------------------------------------- input css ------------------------------------*/
 input{
   background-color: hsl(235, 24%, 19%);
   width:100%;
@@ -56,35 +52,38 @@ input{
 }
 
 
-/* displa css */
+/*-------------------------------------------- ADD css ------------------------------------------- */
 .display{
     background-color: hsl(235, 24%, 19%);
-    border-radius: 0.3rem;
-    padding: 1rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+    padding-top:0.5rem;
 }
 
 h5{
   text-align: center;
+  margin-bottom: 0;
+  padding:1rem;
 }
 footer{
   display: flex;
-  position: relative;
-  margin:1rem 0;
+  background-color: hsl(235, 24%, 19%);
+  padding:1rem;
+  border-radius: 0 0 0.3rem 0.3rem;
 }
-a{
-  color: white;
-  text-decoration: none;
+span{
+  /* color: white; */
   margin-right: 1rem;
+  cursor:pointer;
 }
 
 footer :last-child {
   margin-left: auto;
   color:#F37878;
+  cursor: pointer;
+
 }
 
-
-
-/* add input  */
+/*--------------------------------------------- add input ----------------------------------- */
 
 .checkbox{
   margin: 1rem;
