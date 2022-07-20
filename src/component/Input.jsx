@@ -15,11 +15,8 @@ export default function Input(props){
     }
   }
 
-  let [mode,setMode] = React.useState(true)
-  useEffect( () => {
-    let displayinput=document.querySelector("displayinput");
-  })
 
+  let [mode,setMode] = React.useState(true)
   function handleMode(){
      if(mode){
       document.getElementsByTagName("img")[0].src = images.moon;
@@ -32,6 +29,7 @@ export default function Input(props){
       props.displayRef.current.style.color="hsl(235, 24%, 19%)";
       props.displayRef.current.style.boxShadow = " 0rem 0rem 1rem 0rem "
       document.getElementsByTagName('footer')[0].style.boxShadow="0rem 0rem 1rem 0rem";
+      document.body.style.backgroundImage = 'url("./images/bg-desktop-light.jpg")';
 
     }else{
       document.getElementsByTagName("img")[0].src = images.brightness;
@@ -43,6 +41,7 @@ export default function Input(props){
       props.displayRef.current.style.color="white";
       props.displayRef.current.style.boxShadow = ""
       document.getElementsByTagName('footer')[0].style.boxShadow="";
+      document.body.style.backgroundImage = 'url("./images/bg-desktop-dark.jpg")';
     }
     setMode(!mode)
   }

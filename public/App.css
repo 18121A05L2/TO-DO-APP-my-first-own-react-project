@@ -9,7 +9,7 @@ body{
   background-image:url("./images/bg-desktop-dark.jpg");
   background-color:  hsl(235, 21%, 11%);
   background-repeat: no-repeat;
-  background-size: 100% 35%;
+  background-size: 100% 13rem;
   color:hsl(236, 33%, 92%);
   font-family: "Josefin Sans"
 }
@@ -19,7 +19,6 @@ h1 {
 /* app css */
 .app{
   position:relative;    /* image is absolute to its relative parent */
-/* border: 2px solid yellow; */
   max-width: 50%;
   min-width:30rem;
   right:25%;
@@ -27,7 +26,7 @@ h1 {
   top:3rem;
 }
 header{
-  padding: 1rem;
+  padding: 0.7rem;
 }
 .brightness{
   color: white;
@@ -89,10 +88,20 @@ footer :last-child {
   margin: 1rem;
   width: 1rem;
   height:1rem;
-  color:#F9F9F9;
+  border-radius:0.5rem;
+  cursor : pointer;
 }
+.checkbox:hover{
+
+}
+
 .tasks{
   display: inline;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 100px;
+
+
 }
 .fa-circle-minus{
   position:absolute;
@@ -102,9 +111,23 @@ footer :last-child {
 }
 .displayinput{
   border-bottom: 1px solid hsl(236, 9%, 61%);
+  padding:0.3rem 1rem 0.3rem 1rem;
 }
 
 
+/* --------------------------------------- MOBILE DESIGN --------------------------- */
+
+@media (max-width :700px ){
+  .app{
+    position: relative;
+    max-width: 86%;
+    min-width:30rem;
+    right:7%;
+    left:7%;
+    top:1.5rem;
+  }
+
+}
 
 
 
